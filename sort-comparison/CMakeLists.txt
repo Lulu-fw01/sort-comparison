@@ -10,7 +10,10 @@ add_executable(
         lib/SelectionSort.cpp
         lib/BubbleSort.cpp
         lib/InsertionSort.cpp
-        lib/BinarySearch.cpp)
+        lib/BinarySearch.cpp
+        lib/CountingSort.cpp
+        lib/RadixSort.cpp
+        lib/Funcs.cpp)
 
 target_include_directories(
         lulu_sorts

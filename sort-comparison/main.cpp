@@ -1,6 +1,6 @@
 #include <iostream>
 #include <vector>
-#include "LuluSorts/InsertionSort.h"
+#include "LuluSorts/RadixSort.h"
 
 void output(const std::vector<int>& vec) {
     for (auto elem : vec) {
@@ -11,7 +11,7 @@ void output(const std::vector<int>& vec) {
 
 int main() {
     std::vector<int> vec{6, 5, 3, 54, 6, 2, 1, 90, 34, 12};
-    LuluSorts::binaryInsertionSort(&vec);
+    LuluSorts::radixSort(&vec);
     output(vec);
 
     return 0;
