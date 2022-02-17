@@ -23,7 +23,7 @@ namespace Lulu::Utils {
     int getDigit(int num, int digitNum);
 
     /***/
-    bool isVectorSorted(const std::vector<int>& arr);
+    bool isSorted(const std::vector<int>& arr);
 
 }
 

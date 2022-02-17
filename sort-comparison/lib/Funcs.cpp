@@ -24,7 +24,11 @@ int Lulu::Utils::getDigit(int num, int digitNum) {
     return static_cast<int>(num / pow(256, digitNum)) % 256;
 }
 
-bool Lulu::Utils::isVectorSorted(const std::vector<int> &arr) {
-
+bool Lulu::Utils::isSorted(const std::vector<int> &arr) {
+    for (int i = 1; i < arr.size(); ++i) {
+        if (arr[i] < arr[i - 1]) {
+            return false;
+        }
+    }
     return true;
 }
