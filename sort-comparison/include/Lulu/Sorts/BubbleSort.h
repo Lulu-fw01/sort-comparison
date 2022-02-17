@@ -7,7 +7,7 @@
 
 #include <vector>
 
-namespace LuluSorts {
+namespace Lulu::Sorts {
 
     /**
      * @brief Bubble sort with 1st and 2nd Iverson's
@@ -15,7 +15,7 @@ namespace LuluSorts {
      *
      * @param array -pointer to int vector.
      * */
-    void bubbleSortByIversonFull(std::vector<int> *array);
+    void bubbleSortByIversonFull(std::vector<int>& array);
 
     /**
      * @brief Bubble sort with 1st Iverson's
@@ -23,13 +23,13 @@ namespace LuluSorts {
      *
      * @param array -pointer to int vector.
      * */
-    void bubbleSortByIversonHalf(std::vector<int> *array);
+    void bubbleSortByIversonHalf(std::vector<int>& array);
 
     /**
     * @brief Classic bubble sort.
     *
     * @param array -pointer to int vector.
     * */
-    void bubbleSortClassic(std::vector<int> *array);
+    void bubbleSortClassic(std::vector<int>& array);
 }
 #endif //SORT_COMPARISON_BUBBLESORT_H

@@ -7,7 +7,7 @@
 
 #include <vector>
 
-namespace LuluSearch {
+namespace Lulu::Search {
 
     int rightSearch(const std::vector<int> &numbers, int elem, int left, int right);
 }

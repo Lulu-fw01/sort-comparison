@@ -7,9 +7,9 @@
 
 #include <vector>
 
-namespace LuluSorts {
+namespace Lulu::Sorts {
 
-    void radixSort(std::vector<int> *array);
+    void radixSort(std::vector<int>& array);
 }
 
 #endif //SORT_COMPARISON_RADIXSORT_H

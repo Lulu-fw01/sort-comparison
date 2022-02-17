@@ -7,9 +7,9 @@
 
 #include <vector>
 
-namespace LuluSorts {
+namespace Lulu::Sorts {
 
-    void selectionSort(std::vector<int> *array);
+    void selectionSort(std::vector<int>& array);
 }
 
 #endif //SORT_COMPARISON_SELECTIONSORT_H

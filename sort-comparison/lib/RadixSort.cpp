@@ -2,26 +2,26 @@
 // Created by luka on 16.02.2022.
 //
 
-#include "LuluSorts/RadixSort.h"
-#include "LuluUtils/Funcs.h"
+#include "Lulu/Sorts/RadixSort.h"
+#include "Lulu/Utils/Funcs.h"
 
-void LuluSorts::radixSort(std::vector<int> *array) {
-    int it_num = 0;
-    int maxi = LuluUtils::getMax(*array);
+void Lulu::Sorts::radixSort(std::vector<int>& array) {
+    int itNum = 0;
+    int maxi = Lulu::Utils::getMax(array);
     while (maxi != 0) {
-        it_num++;
+        itNum++;
         maxi = maxi / 256;
     }
-    std::vector<int> result(array->size());
+    std::vector<int> result(array.size());
     std::vector<int> counter(256);
     std::vector<int> offset(256);
     int dig;
-    for (int ind = 0; ind < it_num; ++ind) {
+    for (int ind = 0; ind < itNum; ++ind) {
         for (int j = 0; j < 256; ++j) {
             counter[j] = 0;
         }
-        for (int j_elem : *array) {
-            dig = LuluUtils::getDigit(j_elem, ind);
+        for (int elem : array) {
+            dig = Lulu::Utils::getDigit(elem, ind);
             counter[dig]++;
         }
         offset[0] = 0;
@@ -29,11 +29,11 @@ void LuluSorts::radixSort(std::vector<int> *array) {
             offset[j] = counter[j - 1] + offset[j - 1];
         }
 
-        for (int j_elem : *array) {
-            dig = LuluUtils::getDigit(j_elem, ind);
-            result[offset[dig]] = j_elem;
+        for (int elem : array) {
+            dig = Lulu::Utils::getDigit(elem, ind);
+            result[offset[dig]] = elem;
             offset[dig]++;
         }
-        *array = result;
+        array = result;
     }
 }

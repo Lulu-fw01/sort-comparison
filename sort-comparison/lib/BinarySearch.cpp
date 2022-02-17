@@ -2,9 +2,9 @@
 // Created by luka on 16.02.2022.
 //
 
-#include "LuluSearch/BinarySearch.h"
+#include "Lulu/Search/BinarySearch.h"
 
-int LuluSearch::rightSearch(const std::vector<int> &numbers, int elem, int left, int right) {
+int Lulu::Search::rightSearch(const std::vector<int> &numbers, int elem, int left, int right) {
     int mid;
 
     while (right - left > 1) {

@@ -4,10 +4,10 @@
 
 #include <cmath>
 
-#include "LuluUtils/Funcs.h"
+#include "Lulu/Utils/Funcs.h"
 
 
-int LuluUtils::getMax(const std::vector<int> &arr) {
+int Lulu::Utils::getMax(const std::vector<int> &arr) {
     if (arr.empty()) {
         return 0;
     }
@@ -20,11 +20,11 @@ int LuluUtils::getMax(const std::vector<int> &arr) {
     return max;
 }
 
-int LuluUtils::getDigit(int num, int digit_num) {
-    return static_cast<int>(num / pow(256, digit_num)) % 256;
+int Lulu::Utils::getDigit(int num, int digitNum) {
+    return static_cast<int>(num / pow(256, digitNum)) % 256;
 }
 
-bool LuluUtils::isVectorSorted(const std::vector<int> &arr) {
+bool Lulu::Utils::isVectorSorted(const std::vector<int> &arr) {
 
     return true;
 }

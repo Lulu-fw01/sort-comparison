@@ -1,6 +1,6 @@
 #include <iostream>
 #include <vector>
-#include "LuluSorts/RadixSort.h"
+#include "Lulu/Sorts/SelectionSort.h"
 
 void output(const std::vector<int>& vec) {
     for (auto elem : vec) {
@@ -10,8 +10,8 @@ void output(const std::vector<int>& vec) {
 }
 
 int main() {
-    std::vector<int> vec{6, 5, 3, 54, 6, 2, 1, 90, 34, 12};
-    LuluSorts::radixSort(&vec);
+    std::vector<int> vec{7, 5, 32, 54, 8, 90, 3, 45, 6, 78, 4, 108, 203, 0};
+    Lulu::Sorts::selectionSort(vec);
     output(vec);
 
     return 0;

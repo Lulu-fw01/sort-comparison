@@ -7,11 +7,11 @@
 
 #include <vector>
 
-namespace LuluSorts {
+namespace Lulu::Sorts {
 
-    void insertionSort(std::vector<int> *array);
+    void insertionSort(std::vector<int>& array);
 
-    void binaryInsertionSort(std::vector<int> *array);
+    void binaryInsertionSort(std::vector<int>& array);
 
 }
 
