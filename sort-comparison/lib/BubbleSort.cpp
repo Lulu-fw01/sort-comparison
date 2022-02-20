@@ -48,7 +48,7 @@ void Lulu::Sorts::bubbleSortByIversonHalf(std::vector<int> &array) {
 * */
 void Lulu::Sorts::bubbleSortClassic(std::vector<int> &array) {
     for (int i = 0; i < array.size() - 1; ++i) {
-        for (int j = 0; j < array.size() - i - 1; j++) {
+        for (int j = 0; j < array.size() - i - 1; ++j) {
             if (array[j] > array[j + 1]) {
                 std::swap(array[j], array[j + 1]);
             }
