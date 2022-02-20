@@ -8,7 +8,7 @@
 * @brief Bubble sort with 1st and 2nd Iverson's
 * conditions.
 *
-* @param array -pointer to int vector.
+* @param array -link to int vector.
 * */
 void Lulu::Sorts::bubbleSortByIversonFull(std::vector<int> &array) {
     // Flag for Iverson's
@@ -35,7 +35,7 @@ void Lulu::Sorts::bubbleSortByIversonFull(std::vector<int> &array) {
 * @brief Bubble sort with 1st Iverson's
 * condition.
 *
-* @param array -pointer to int vector.
+* @param array -link to int vector.
 * */
 void Lulu::Sorts::bubbleSortByIversonHalf(std::vector<int> &array) {
 
@@ -44,8 +44,14 @@ void Lulu::Sorts::bubbleSortByIversonHalf(std::vector<int> &array) {
 /**
 * @brief Classic bubble sort.
 *
-* @param array -pointer to int vector.
+* @param array -link to int vector.
 * */
 void Lulu::Sorts::bubbleSortClassic(std::vector<int> &array) {
-
+    for (int i = 0; i < array.size() - 1; ++i) {
+        for (int j = 0; j < array.size() - i - 1; j++) {
+            if (array[j] > array[j + 1]) {
+                std::swap(array[j], array[j + 1]);
+            }
+        }
+    }
 }
