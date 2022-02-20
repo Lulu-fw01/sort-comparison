@@ -3,6 +3,7 @@
 //
 
 #include <cmath>
+#include <iostream>
 
 #include "Lulu/Utils/Funcs.h"
 
@@ -38,4 +39,11 @@ bool Lulu::Utils::isSorted(const std::vector<int> &arr) {
         }
     }
     return true;
+}
+
+void Lulu::Utils::printVector(const std::vector<int> &vec) {
+    for (auto elem : vec) {
+        std::cout << elem << " ";
+    }
+    std::cout << std::endl;
 }

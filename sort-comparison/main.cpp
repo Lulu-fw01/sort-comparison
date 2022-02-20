@@ -1,19 +1,13 @@
 #include <iostream>
 #include <vector>
-#include "Lulu/Sorts/MergeSort.h"
+#include "Lulu/Sorts/QuickSort.h"
 #include "Lulu/Utils/Funcs.h"
 
-void output(const std::vector<int>& vec) {
-    for (auto elem : vec) {
-        std::cout << elem << " ";
-    }
-    std::cout << std::endl;
-}
 
 int main() {
-    std::vector<int> vec{7, 5, 32, 54, 8, 90, 3, 45, 6, 78, 4, 108, 203, 0};
-    Lulu::Sorts::mergeSort(vec);
-    output(vec);
+    std::vector<int> vec{7, 5, 32, 54, 8, 90, 3, 45, 6, 78, 4, 108, 203, 1};
+    Lulu::Sorts::quickSortByHoare(vec);
+    Lulu::Utils::printVector(vec);
 
     std::cout << (Lulu::Utils::isSorted(vec) ? "sorted" : "not sorted");
 

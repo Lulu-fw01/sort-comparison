@@ -14,7 +14,8 @@ add_executable(
         lib/CountingSort.cpp
         lib/RadixSort.cpp
         lib/Funcs.cpp
-        lib/MergeSort.cpp include/Lulu/Sorts/QuickSort.h)
+        lib/MergeSort.cpp
+        lib/QuickSort.cpp)
 
 target_include_directories(
         lulu_sorts

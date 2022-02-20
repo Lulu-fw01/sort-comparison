@@ -9,12 +9,13 @@
 
 namespace Lulu::Utils {
 
-    int getMax(const std::vector<int>& arr);
+    int getMax(const std::vector<int>&);
 
-    int getDigit(int num, int digitNum);
+    int getDigit(int, int);
 
-    bool isSorted(const std::vector<int>& arr);
+    bool isSorted(const std::vector<int>&);
 
+    void printVector(const std::vector<int>&);
 }
 
 #endif //SORT_COMPARISON_GETDIGIT_H
