@@ -54,33 +54,24 @@ void Lulu::Sorts::quickSortByHoare(std::vector<int> &array, int first, int last)
 
 
 // Pivot by middle element.
-std::pair<int, int> pivotListByLomuto(std::vector<int> &array, int first, int last) {
-    int mid = first + (last - first) / 2;
-    // Set pivot as middle element.
-    int pivot = array[mid];
+int pivotListByLomuto(std::vector<int> &array, int first, int last) {
+    // Set pivot as last element.
+    int pivot = array[last];
+    int pivot_point = last;
+    int j = first - 1;
 
-    while (first <= last) {
-        // While elements are
-        // smaller than middle element.
-        while (array[first] < pivot) {
-            first++;
+    for (int i = first; i < last; ++i) {
+        if (array[i] <= pivot) {
+            // Put elements which are smaller or equal to
+            // last element into beginning of the vector.
+            j++;
+            std::swap(array[j], array[i]);
         }
-
-        // While elements are
-        // bigger than middle element.
-        while (array[last] > pivot) {
-            last--;
-        }
-        if (first > last) {
-            // It means that we shouldn't swap elements more.
-            return std::pair(first, last);
-        }
-
-        // Swap elements.
-        std::swap(array[first++], array[last--]);
     }
-
-    return {first, last};
+    // Put pivot element before all
+    // elements which are bigger than it.
+    std::swap(array[j + 1], array[pivot_point]);
+    return j + 1;
 }
 
 /**
@@ -95,11 +86,10 @@ void Lulu::Sorts::quickSortByLomuto(std::vector<int> &array) {
 
 // Quick sort method.
 void Lulu::Sorts::quickSortByLomuto(std::vector<int> &array, int first, int last) {
-    // Num of recursion calls.
     if (first < last) {
         auto pivot = pivotListByLomuto(array, first, last);
-        Lulu::Sorts::quickSortByLomuto(array, first, pivot.second);
-        Lulu::Sorts::quickSortByLomuto(array, pivot.first, last);
+        Lulu::Sorts::quickSortByLomuto(array, first, pivot - 1);
+        Lulu::Sorts::quickSortByLomuto(array, pivot + 1, last);
     }
 }
 
