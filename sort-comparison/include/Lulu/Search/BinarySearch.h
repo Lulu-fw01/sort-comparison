@@ -9,7 +9,7 @@
 
 namespace Lulu::Search {
 
-    int rightSearch(const std::vector<int> &numbers, int elem, int left, int right);
+    int rightSearch(const std::vector<int>&, int, int, int);
 }
 
 #endif //SORT_COMPARISON_BINARYSEARCH_H

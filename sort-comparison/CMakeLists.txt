@@ -13,7 +13,8 @@ add_executable(
         lib/BinarySearch.cpp
         lib/CountingSort.cpp
         lib/RadixSort.cpp
-        lib/Funcs.cpp)
+        lib/Funcs.cpp
+        lib/MergeSort.cpp include/Lulu/Sorts/QuickSort.h)
 
 target_include_directories(
         lulu_sorts

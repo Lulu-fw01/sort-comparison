@@ -1,6 +1,6 @@
 #include <iostream>
 #include <vector>
-#include "Lulu/Sorts/SelectionSort.h"
+#include "Lulu/Sorts/MergeSort.h"
 #include "Lulu/Utils/Funcs.h"
 
 void output(const std::vector<int>& vec) {
@@ -12,7 +12,7 @@ void output(const std::vector<int>& vec) {
 
 int main() {
     std::vector<int> vec{7, 5, 32, 54, 8, 90, 3, 45, 6, 78, 4, 108, 203, 0};
-    Lulu::Sorts::selectionSort(vec);
+    Lulu::Sorts::mergeSort(vec);
     output(vec);
 
     std::cout << (Lulu::Utils::isSorted(vec) ? "sorted" : "not sorted");

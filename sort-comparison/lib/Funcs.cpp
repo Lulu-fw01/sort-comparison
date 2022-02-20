@@ -6,7 +6,14 @@
 
 #include "Lulu/Utils/Funcs.h"
 
-
+/**
+* @brief Function which returns max element of int vector.
+*
+* @param arr const link to int vector.
+*
+* @return max element of int vector or
+* if vector is empty returns 0.
+*/
 int Lulu::Utils::getMax(const std::vector<int> &arr) {
     if (arr.empty()) {
         return 0;

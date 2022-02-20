@@ -4,7 +4,13 @@
 
 #include "Lulu/Sorts/BubbleSort.h"
 
-void Lulu::Sorts::bubbleSortByIversonFull(std::vector<int>& array) {
+/**
+* @brief Bubble sort with 1st and 2nd Iverson's
+* conditions.
+*
+* @param array -pointer to int vector.
+* */
+void Lulu::Sorts::bubbleSortByIversonFull(std::vector<int> &array) {
     // Flag for Iverson's
     // first condition.
     bool notSorted = true;
@@ -25,10 +31,21 @@ void Lulu::Sorts::bubbleSortByIversonFull(std::vector<int>& array) {
     }
 }
 
-void Lulu::Sorts::bubbleSortByIversonHalf(std::vector<int>& array) {
+/**
+* @brief Bubble sort with 1st Iverson's
+* condition.
+*
+* @param array -pointer to int vector.
+* */
+void Lulu::Sorts::bubbleSortByIversonHalf(std::vector<int> &array) {
 
 }
 
-void Lulu::Sorts::bubbleSortClassic(std::vector<int>& array) {
+/**
+* @brief Classic bubble sort.
+*
+* @param array -pointer to int vector.
+* */
+void Lulu::Sorts::bubbleSortClassic(std::vector<int> &array) {
 
 }
