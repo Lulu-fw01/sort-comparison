@@ -8,8 +8,7 @@
 #include <vector>
 
 namespace Lulu::Sorts {
-    // Проверить, что устойчивая
-    // Counting sort method.
+
     void countingSort(std::vector<int>&);
 }
 

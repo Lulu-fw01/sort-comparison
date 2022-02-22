@@ -5,6 +5,12 @@
 #include "Lulu/Sorts/CountingSort.h"
 #include "Lulu/Utils/Funcs.h"
 
+/**
+ * @brief Counting sort function.<p>
+ * Stable.
+ *
+ * @param array -link to int vector.
+ * */
 void Lulu::Sorts::countingSort(std::vector<int>& array) {
     int max = Lulu::Utils::getMax(array);
 
