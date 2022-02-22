@@ -70,7 +70,7 @@ void Lulu::Sorts::quickSortByHoare(std::vector<int> &array, int first, int last)
 int pivotListByLomuto(std::vector<int> &array, int first, int last) {
     // Set pivot as last element.
     int pivot = array[last];
-    int pivot_point = last;
+    int pivotPoint = last;
     int j = first - 1;
 
     for (int i = first; i < last; ++i) {
@@ -83,7 +83,7 @@ int pivotListByLomuto(std::vector<int> &array, int first, int last) {
     }
     // Put pivot element before all
     // elements which are bigger or equal to it.
-    std::swap(array[j + 1], array[pivot_point]);
+    std::swap(array[j + 1], array[pivotPoint]);
     return j + 1;
 }
 

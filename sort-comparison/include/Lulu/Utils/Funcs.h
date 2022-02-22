@@ -11,7 +11,7 @@ namespace Lulu::Utils {
 
     int getMax(const std::vector<int>&);
 
-    int getDigit(int, int);
+    int getDigitBy256(int, int);
 
     bool isSorted(const std::vector<int>&);
 

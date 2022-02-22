@@ -28,10 +28,21 @@ int Lulu::Utils::getMax(const std::vector<int> &arr) {
     return max;
 }
 
-int Lulu::Utils::getDigit(int num, int digitNum) {
+/**
+ * @brief Get n-th digit by 256.
+ *
+ * @param num - number.
+ * @param digitNum - digit number.
+ * */
+int Lulu::Utils::getDigitBy256(int num, int digitNum) {
     return static_cast<int>(num / pow(256, digitNum)) % 256;
 }
 
+/**
+ * @brief Check if int vector sorted.
+ *
+ * @param vec - const link to vector.
+ * */
 bool Lulu::Utils::isSorted(const std::vector<int> &arr) {
     for (int i = 1; i < arr.size(); ++i) {
         if (arr[i] < arr[i - 1]) {
@@ -41,6 +52,11 @@ bool Lulu::Utils::isSorted(const std::vector<int> &arr) {
     return true;
 }
 
+/**
+ * @brief Print int vector.
+ *
+ * @param vec - const link to vector.
+ * */
 void Lulu::Utils::printVector(const std::vector<int> &vec) {
     for (auto elem : vec) {
         std::cout << elem << " ";

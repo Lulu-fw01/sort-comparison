@@ -29,7 +29,7 @@ void Lulu::Sorts::radixSort(std::vector<int>& array) {
             counter[j] = 0;
         }
         for (int elem : array) {
-            dig = Lulu::Utils::getDigit(elem, ind);
+            dig = Lulu::Utils::getDigitBy256(elem, ind);
             counter[dig]++;
         }
         offset[0] = 0;
@@ -38,7 +38,7 @@ void Lulu::Sorts::radixSort(std::vector<int>& array) {
         }
 
         for (int elem : array) {
-            dig = Lulu::Utils::getDigit(elem, ind);
+            dig = Lulu::Utils::getDigitBy256(elem, ind);
             result[offset[dig]] = elem;
             offset[dig]++;
         }
