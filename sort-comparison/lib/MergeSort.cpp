@@ -17,25 +17,25 @@ void Lulu::Sorts::mergeSort(std::vector<int> &array) {
     int right = array.size() - 1;
     if (0 < right - left) {
         // Left border, right border.
-        int left_b, right_b, mid;
+        int leftB, rightB, mid;
         for (int k = 1; k <= right; k *= 2) {
-            left_b = left;
-            right_b = 2 * k - 1;
+            leftB = left;
+            rightB = 2 * k - 1;
 
-            while (left_b < right) {
-                if (right_b > right) {
-                    right_b = right;
+            while (leftB < right) {
+                if (rightB > right) {
+                    rightB = right;
                 }
-                mid = left_b + k - 1;
+                mid = leftB + k - 1;
                 if (mid > right) {
                     mid = right;
                 }
 
-                mergeLists(array, left_b, mid, mid + 1, right_b);
+                mergeLists(array, leftB, mid, mid + 1, rightB);
 
                 // Move righter.
-                left_b = right_b + 1;
-                right_b += 2 * k;
+                leftB = rightB + 1;
+                rightB += 2 * k;
             }
         }
     }
@@ -46,46 +46,47 @@ void Lulu::Sorts::mergeSort(std::vector<int> &array) {
  * @brief Method for merging two sorted parts of array.
  *
  * @param array -link to int vector.
- * @param first_start -start index of first part.
- * @param first_end -end index of first part
- * @param second_start -start index of second part.
- * @param second_end -end index of second part.
+ * @param firstStart -start index of first part.
+ * @param firstEnd -end index of first part
+ * @param secondStart -start index of second part.
+ * @param secondEnd -end index of second part.
  */
-void mergeLists(std::vector<int>& array, int first_start, int first_end, int second_start,
-                int second_end) {
-    if (first_start > second_end) {
+void mergeLists(std::vector<int>& array, int firstStart, int firstEnd, int secondStart,
+                int secondEnd) {
+    if (firstStart > secondEnd) {
         return;
     }
-    int final_start = first_start;
-    int final_end = second_end;
-    int index_c = 0;
-    std::vector<int> result(second_end - first_start + 1);
-    while (first_start <= first_end && second_start <= second_end) {
-        if (array[first_start] < array[second_start]) {
-            result[index_c] = array[first_start];
-            first_start++;
+    int finalStart = firstStart;
+    int final_end = secondEnd;
+    // Free position of result vector.
+    int indexC = 0;
+    std::vector<int> result(secondEnd - firstStart + 1);
+    while (firstStart <= firstEnd && secondStart <= secondEnd) {
+        if (array[firstStart] < array[secondStart]) {
+            result[indexC] = array[firstStart];
+            firstStart++;
         } else {
-            result[index_c] = array[second_start];
-            second_start++;
+            result[indexC] = array[secondStart];
+            secondStart++;
         }
-        index_c++;
+        indexC++;
     }
 
-    if (first_start <= first_end) {
-        for (int i = first_start; i <= first_end; ++i) {
-            result[index_c] = array[i];
-            index_c++;
+    if (firstStart <= firstEnd) {
+        for (int i = firstStart; i <= firstEnd; ++i) {
+            result[indexC] = array[i];
+            indexC++;
         }
     } else {
-        for (int i = second_start; i <= second_end; ++i) {
-            result[index_c] = array[i];
-            index_c++;
+        for (int i = secondStart; i <= secondEnd; ++i) {
+            result[indexC] = array[i];
+            indexC++;
         }
     }
 
-    index_c = 0;
-    for (int i = final_start; i <= final_end; ++i) {
-        array[i] = result[index_c];
-        index_c++;
+    indexC = 0;
+    for (int i = finalStart; i <= final_end; ++i) {
+        array[i] = result[indexC];
+        indexC++;
     }
 }
