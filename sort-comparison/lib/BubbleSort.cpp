@@ -37,8 +37,19 @@ void Lulu::Sorts::bubbleSortByIversonFull(std::vector<int> &array) {
 *
 * @param array -link to int vector.
 * */
-void Lulu::Sorts::bubbleSortByIversonHalf(std::vector<int> &array) {
-
+void Lulu::Sorts::bubbleSortByIversonFirst(std::vector<int> &array) {
+    // First Iverson's condition.
+    bool notSorted = true;
+    int i = 0;
+    while (notSorted) {
+        notSorted = false;
+        for (int j = 0; j < array.size() - i - 1; ++j) {
+            if (array[j] > array[j + 1]) {
+                std::swap(array[j], array[j + 1]);
+                notSorted = true;
+            }
+        }
+    }
 }
 
 /**

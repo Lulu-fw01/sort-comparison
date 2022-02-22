@@ -69,7 +69,7 @@ int pivotListByLomuto(std::vector<int> &array, int first, int last) {
         }
     }
     // Put pivot element before all
-    // elements which are bigger than it.
+    // elements which are bigger or equal to it.
     std::swap(array[j + 1], array[pivot_point]);
     return j + 1;
 }

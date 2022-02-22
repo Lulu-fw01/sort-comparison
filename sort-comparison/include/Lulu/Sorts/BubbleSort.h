@@ -11,7 +11,7 @@ namespace Lulu::Sorts {
 
     void bubbleSortByIversonFull(std::vector<int>&);
 
-    void bubbleSortByIversonHalf(std::vector<int>&);
+    void bubbleSortByIversonFirst(std::vector<int>&);
 
     void bubbleSortClassic(std::vector<int>&);
 }
