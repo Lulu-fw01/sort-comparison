@@ -5,6 +5,13 @@
 #include "Lulu/Sorts/InsertionSort.h"
 #include "Lulu/Search/BinarySearch.h"
 
+
+/**
+ * @brief Insertion sort function.<p>
+ * Simple inserts.
+ *
+ * @param array -link to int vector.
+ * */
 void Lulu::Sorts::insertionSort(std::vector<int>& array) {
     int key;
     int ind;
@@ -21,6 +28,13 @@ void Lulu::Sorts::insertionSort(std::vector<int>& array) {
     }
 }
 
+
+/**
+ * @brief Insertion sort function.<p>
+ * Binary inserts.
+ *
+ * @param array -link to int vector.
+ * */
 void Lulu::Sorts::binaryInsertionSort(std::vector<int>& array) {
     int jInd;
     int searchInd;
