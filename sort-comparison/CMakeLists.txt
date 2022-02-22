@@ -16,7 +16,8 @@ add_executable(
         lib/Funcs.cpp
         lib/MergeSort.cpp
         lib/QuickSort.cpp
-        lib/HeapSort.cpp)
+        lib/HeapSort.cpp
+        lib/NoteTime.cpp)
 
 target_include_directories(
         lulu_sorts
