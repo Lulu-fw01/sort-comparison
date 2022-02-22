@@ -15,14 +15,14 @@
 void Lulu::Sorts::insertionSort(std::vector<int>& array) {
     int key;
     int ind;
-    for (int jInd = 1; jInd < array.size(); ++jInd) {
-        key = array[jInd];
-        ind = jInd - 1;
+    for (int j = 1; j < array.size(); ++j) {
+        key = array[j];
+        ind = j - 1;
         while (ind >= 0 && array[ind] > key) {
             array[ind + 1] = array[ind];
             ind--;
         }
-        if (ind + 1 != jInd) {
+        if (ind + 1 != j) {
             array[ind + 1] = key;
         }
     }
@@ -36,17 +36,17 @@ void Lulu::Sorts::insertionSort(std::vector<int>& array) {
  * @param array -link to int vector.
  * */
 void Lulu::Sorts::binaryInsertionSort(std::vector<int>& array) {
-    int jInd;
+    int j;
     int searchInd;
-    for (auto iInd = 1; iInd < array.size(); ++iInd) {
-        jInd = iInd - 1;
+    for (auto i = 1; i < array.size(); ++i) {
+        j = i - 1;
         // Use binary search to find index.
-        searchInd =  Lulu::Search::rightSearch(array, array[iInd], -1, jInd + 1);
+        searchInd = Lulu::Search::rightSearch(array, array[i], -1, j + 1);
 
         // Move.
-        if (array[jInd + 1] != array[searchInd]) {
-            for (int k_ind = jInd; k_ind >= searchInd; --k_ind) {
-                std::swap(array[k_ind], array[k_ind + 1]);
+        if (array[j + 1] != array[searchInd]) {
+            for (int k = j; k >= searchInd; --k) {
+                std::swap(array[k], array[k + 1]);
             }
         }
     }
