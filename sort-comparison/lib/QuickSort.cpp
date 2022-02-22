@@ -4,7 +4,9 @@
 
 #include "Lulu/Sorts/QuickSort.h"
 
-// Pivot by middle element.
+/**
+ * @brief pivot by middle element.
+ * */
 std::pair<int, int> pivotListByHoare(std::vector<int> &array, int first, int last) {
     int mid = first + (last - first) / 2;
     // Set pivot as middle element.
@@ -35,15 +37,24 @@ std::pair<int, int> pivotListByHoare(std::vector<int> &array, int first, int las
 }
 
 /**
+ * @brief Quick sort function <p>
+ * that uses the Hoare partition by the middle element.
  *
- *
+ * @param array -link to int vector.
  * */
 void Lulu::Sorts::quickSortByHoare(std::vector<int> &array) {
     // Call for quick sort.
     Lulu::Sorts::quickSortByHoare(array, 0, array.size() - 1);
 }
 
-// Quick sort method.
+/**
+ * @brief Quick sort function on a segment <p>
+ * that uses the Hoare partition by the middle element.
+ *
+ * @param array -link to int vector.
+ * @param first -index of first element of a segment.
+ * @param last -index of last element of a segment.
+ * */
 void Lulu::Sorts::quickSortByHoare(std::vector<int> &array, int first, int last) {
     if (first < last) {
         auto pivot = pivotListByHoare(array, first, last);
@@ -53,7 +64,9 @@ void Lulu::Sorts::quickSortByHoare(std::vector<int> &array, int first, int last)
 }
 
 
-// Pivot by middle element.
+/**
+ * @brief pivot by last element.
+ * */
 int pivotListByLomuto(std::vector<int> &array, int first, int last) {
     // Set pivot as last element.
     int pivot = array[last];
@@ -75,16 +88,24 @@ int pivotListByLomuto(std::vector<int> &array, int first, int last) {
 }
 
 /**
+ * @brief Quick sort function <p>
+ * that uses the Lomuto partition by the last element.
  *
- *
- *
+ * @param array -link to int vector.
  * */
 void Lulu::Sorts::quickSortByLomuto(std::vector<int> &array) {
     // Call for quick sort.
     quickSortByLomuto(array, 0, array.size() - 1);
 }
 
-// Quick sort method.
+/**
+ * @brief Quick sort function on a segment <p>
+ * that uses the Lomuto partition by the last element.
+ *
+ * @param array -link to int vector.
+ * @param first -index of first element of a segment.
+ * @param last -index of last element of a segment.
+ * */
 void Lulu::Sorts::quickSortByLomuto(std::vector<int> &array, int first, int last) {
     if (first < last) {
         auto pivot = pivotListByLomuto(array, first, last);

@@ -6,7 +6,7 @@
 #include "Lulu/Utils/Funcs.h"
 
 /**
- * @breif Radix sort function. <p>
+ * @brief Radix sort function. <p>
  * Last significant radix sort by base 256.
  *
  * @param array -link to int vector.
