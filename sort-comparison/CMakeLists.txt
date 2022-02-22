@@ -7,17 +7,17 @@ set(CMAKE_CXX_STANDARD 17)
 add_executable(
         lulu_sorts
         main.cpp
-        lib/SelectionSort.cpp
-        lib/BubbleSort.cpp
-        lib/InsertionSort.cpp
-        lib/BinarySearch.cpp
-        lib/CountingSort.cpp
-        lib/RadixSort.cpp
-        lib/Funcs.cpp
-        lib/MergeSort.cpp
-        lib/QuickSort.cpp
-        lib/HeapSort.cpp
-        lib/NoteTime.cpp)
+        src/SelectionSort.cpp
+        src/BubbleSort.cpp
+        src/InsertionSort.cpp
+        src/BinarySearch.cpp
+        src/CountingSort.cpp
+        src/RadixSort.cpp
+        src/Funcs.cpp
+        src/MergeSort.cpp
+        src/QuickSort.cpp
+        src/HeapSort.cpp
+        src/NoteTime.cpp)
 
 target_include_directories(
         lulu_sorts
