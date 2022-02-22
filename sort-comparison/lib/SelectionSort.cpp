@@ -4,9 +4,16 @@
 
 #include "Lulu/Sorts/SelectionSort.h"
 
+/**
+ * @brief Selection sort function.
+ *
+ * This function realise selection sort algorithm
+ * by select minimum.
+ *
+ * @param array -link to int vector.
+ * */
 void Lulu::Sorts::selectionSort(std::vector<int>& array) {
     int min;
-
     for (int ind = 0; ind + 1 < array.size(); ++ind) {
         min = ind;
         // Search for minimal element.
