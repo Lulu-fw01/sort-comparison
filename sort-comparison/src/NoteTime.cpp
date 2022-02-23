@@ -24,10 +24,8 @@ long long Lulu::Sorts::Time::noteTheTime(void(*sortFunction) (std::vector<int> &
     // Again get time in the present moment.
     // And count the difference.
     auto elapsed = std::chrono::high_resolution_clock::now() - start;
-    if (Lulu::Utils::isSorted(array)) {
-        std::cout << "Sorted" << std::endl;
-    } else {
-        std::cout << "Not sorted" << std::endl;
+    if (!Lulu::Utils::isSorted(array)) {
+        std::cout << "NOT SORTED!!!" << std::endl;
     }
     // Get nanoseconds from the time.
     long long nanoseconds =

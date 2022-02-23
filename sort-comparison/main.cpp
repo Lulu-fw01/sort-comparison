@@ -12,16 +12,14 @@
 #include <iostream>
 #include <vector>
 
-#include "Lulu/Sorts/QuickSort.h"
-#include "Lulu/Sorts/Time/NoteTime.h"
-#include "Lulu/Utils/Funcs.h"
+#include "Lulu/Sorts/Time/TimeTests.h"
 
 
 int main() {
     srand(static_cast<unsigned int>(time(nullptr)));
-    std::vector<int> vec = Lulu::Utils::getRandomVector(100, 1, 100);
-    std::cout << Lulu::Sorts::Time::noteTheTime(Lulu::Sorts::quickSortByHoare, vec) << std::endl;
 
-    Lulu::Utils::printVector(vec);
+    Lulu::Sorts::Time::timeTest1();
+
+
     return 0;
 }
