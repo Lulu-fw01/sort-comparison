@@ -18,8 +18,10 @@
 
 
 int main() {
-    std::vector<int> vec{7, 5, 26, 32, 54, 8, 90, 3, 45, 7, 89, 5, 43, 9, 1, 1, 5, 45, 901, 4, 2, 45, 44, 6, 78, 4, 108, 203, 1};
-    std::cout << Lulu::Sorts::Time::noteTheTime(Lulu::Sorts::quickSortByHoare, vec);
+    srand(static_cast<unsigned int>(time(nullptr)));
+    std::vector<int> vec = Lulu::Utils::getRandomVector(100, 1, 100);
+    std::cout << Lulu::Sorts::Time::noteTheTime(Lulu::Sorts::quickSortByHoare, vec) << std::endl;
 
+    Lulu::Utils::printVector(vec);
     return 0;
 }

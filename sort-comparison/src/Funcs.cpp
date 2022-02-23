@@ -58,8 +58,50 @@ bool Lulu::Utils::isSorted(const std::vector<int> &arr) {
  * @param vec - const link to vector.
  * */
 void Lulu::Utils::printVector(const std::vector<int> &vec) {
-    for (auto elem : vec) {
+    for (auto elem: vec) {
         std::cout << elem << " ";
     }
     std::cout << std::endl;
+}
+
+/**
+ * @brief Random number between 2 numbers.
+ *
+ * @attention this function use rand().
+ * So, use srand() before.
+ *
+ * @param min -min value.
+ * @param max -max value.
+ * */
+int Lulu::Utils::getRandomNum(int min, int max) {
+    return min + rand() % (max - min + 1);
+}
+
+/**
+ * Get random int vector.
+ * */
+std::vector<int> Lulu::Utils::getRandomVector(int length) {
+    std::vector<int> vec(length);
+    for (int i = 0; i < length; ++i) {
+        vec[i] = rand();
+    }
+    return vec;
+}
+
+/**
+ * @brief Get random int vector.
+ *
+ * @attention this function use rand().
+ * So, use srand() before.
+ *
+ * @param length -length of vector.
+ * @param min -min value of vector.
+ * @param max -max value of vector.
+ * */
+std::vector<int> Lulu::Utils::getRandomVector(int length, int min, int max) {
+    std::vector<int> vec(length);
+    for (int i = 0; i < length; ++i) {
+        vec[i] = getRandomNum(min, max);
+    }
+    return vec;
 }

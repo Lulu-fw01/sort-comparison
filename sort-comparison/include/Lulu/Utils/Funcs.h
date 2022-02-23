@@ -16,6 +16,12 @@ namespace Lulu::Utils {
     bool isSorted(const std::vector<int>&);
 
     void printVector(const std::vector<int>&);
+
+    int getRandomNum(int, int);
+
+    std::vector<int> getRandomVector(int);
+
+    std::vector<int> getRandomVector(int, int, int);
 }
 
 #endif //SORT_COMPARISON_GETDIGIT_H
