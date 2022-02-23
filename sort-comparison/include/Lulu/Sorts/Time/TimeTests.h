@@ -15,6 +15,10 @@ namespace Lulu::Sorts::Time {
 
     void timeTest2();
 
+    void timeTest3();
+
+    void timeTest4();
+
 }
 
 #endif //SORT_COMPARISON_TIMETESTS_H

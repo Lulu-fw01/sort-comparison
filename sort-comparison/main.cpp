@@ -19,6 +19,7 @@ int main() {
     srand(static_cast<unsigned int>(time(nullptr)));
 
     Lulu::Sorts::Time::timeTest1();
+    Lulu::Sorts::Time::timeTest2();
 
 
     return 0;
