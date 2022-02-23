@@ -9,7 +9,7 @@
 
 namespace Lulu::Sorts::Time {
 
-    void noteTheTime(void(*)(std::vector<int>&), std::vector<int>&);
+    long long noteTheTime(void(*)(std::vector<int>&), std::vector<int>);
 }
 
 #endif //SORT_COMPARISON_NOTETIME_H
