@@ -9,10 +9,10 @@
 
 namespace Lulu::Sorts {
 
-    void bubbleSortByIversonFull(std::vector<int>&);
+    void bubbleSortByIversonFull(std::vector<int> &array);
 
-    void bubbleSortByIversonFirst(std::vector<int>&);
+    void bubbleSortByIversonFirst(std::vector<int> &array);
 
-    void bubbleSortClassic(std::vector<int>&);
+    void bubbleSortClassic(std::vector<int> &array);
 }
 #endif //SORT_COMPARISON_BUBBLESORT_H
