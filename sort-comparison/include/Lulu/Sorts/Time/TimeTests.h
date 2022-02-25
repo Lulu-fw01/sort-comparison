@@ -6,18 +6,19 @@
 #define SORT_COMPARISON_TIMETESTS_H
 
 #include <vector>
+#include <fstream>
 
 namespace Lulu::Sorts::Time {
 
-    void testSorts(std::vector<int>&);
+    void testSorts(std::vector<int>&, std::ofstream&);
 
-    void timeTest1();
+    void timeTest1(std::ofstream&);
 
-    void timeTest2();
+    void timeTest2(std::ofstream&);
 
-    void timeTest3();
+    void timeTest3(std::ofstream&);
 
-    void timeTest4();
+    void timeTest4(std::ofstream&);
 
 }
 

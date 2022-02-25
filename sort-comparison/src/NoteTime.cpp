@@ -14,22 +14,32 @@
  * @param sortFunction function which will sort array.
  * @param array int vector which should be sorted.
  *
- * @return long long value of time in nanoseconds.
+ * @return long long value of average time in nanoseconds.
  * */
-long long Lulu::Sorts::Time::noteTheTime(void(*sortFunction) (std::vector<int> &), std::vector<int> array) {
-    // Get time in the present moment.
-    auto start = std::chrono::high_resolution_clock::now();
-    // Run sort function.
-    sortFunction(array);
-    // Again get time in the present moment.
-    // And count the difference.
-    auto elapsed = std::chrono::high_resolution_clock::now() - start;
-    if (!Lulu::Utils::isSorted(array)) {
-        std::cout << "NOT SORTED!!!" << std::endl;
+long long Lulu::Sorts::Time::noteTheTime(void(*sortFunction) (std::vector<int> &), const std::vector<int>& array) {
+    long long timeSum = 0;
+    std::vector<int> workArray;
+    for (int i = 0; i < 13; ++i) {
+        workArray = array;
+        if (i < 3) {
+            sortFunction(workArray);
+            continue;
+        }
+        // Get time in the present moment.
+        auto start = std::chrono::high_resolution_clock::now();
+        // Run sort function.
+        sortFunction(workArray);
+        // Again get time in the present moment.
+        // And count the difference.
+        auto elapsed = std::chrono::high_resolution_clock::now() - start;
+        if (!Lulu::Utils::isSorted(workArray)) {
+            std::cout << "NOT SORTED!!!" << std::endl;
+        }
+        // Get nanoseconds from the time.
+        long long nanoseconds =
+                std::chrono::duration_cast<std::chrono::nanoseconds>(elapsed).count();
+        timeSum += nanoseconds;
     }
-    // Get nanoseconds from the time.
-    long long nanoseconds =
-            std::chrono::duration_cast<std::chrono::nanoseconds>(elapsed).count();
 
-    return nanoseconds;
+    return timeSum / 10;
 }

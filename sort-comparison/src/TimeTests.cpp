@@ -17,30 +17,63 @@
 #include "Lulu/Sorts/HeapSort.h"
 
 
-void Lulu::Sorts::Time::testSorts(std::vector<int>& arr) {
-    std::cout << "Selection sort\nTime: "<<  Lulu::Sorts::Time::noteTheTime(selectionSort, arr) << std::endl;
+void createTableHat(std::ofstream& outputStream) {
+    outputStream << "array size,Selection sort,Classic bubble sort,1st Iverson's condition bubble sort,"
+                    "1st and 2nd Iverson's condition bubble sort,Insertion sort,Binary insertion sort,"
+                    "Counting sort,Radix sort,Merge sort,Quick sort by Hoare,Quick sort by Lomuto,Heap sort\n";
+}
 
-    std::cout << "Classic bubble sort\nTime: " << Lulu::Sorts::Time::noteTheTime(bubbleSortClassic, arr) << std::endl;
+void Lulu::Sorts::Time::testSorts(std::vector<int>& arr, std::ofstream& outputStream) {
+    // Write array size into file.
+    outputStream << arr.size() << ",";
 
-    std::cout << "1st Iverson's condition bubble sort\nTime: " << Lulu::Sorts::Time::noteTheTime(bubbleSortByIversonFirst, arr) << std::endl;
+    auto time = Lulu::Sorts::Time::noteTheTime(selectionSort, arr);
+    outputStream << time << ",";
+    std::cout << "Selection sort\nTime: "<< time << std::endl;
 
-    std::cout << "1st and 2nd Iverson's condition bubble sort\nTime: " << Lulu::Sorts::Time::noteTheTime(bubbleSortByIversonFull, arr) << std::endl;
+    time = Lulu::Sorts::Time::noteTheTime(bubbleSortClassic, arr);
+    outputStream << time << ",";
+    std::cout << "Classic bubble sort\nTime: " << time << std::endl;
 
-    std::cout << "Insertion sort\nTime: " << Lulu::Sorts::Time::noteTheTime(insertionSort, arr) << std::endl;
+    time = Lulu::Sorts::Time::noteTheTime(bubbleSortByIversonFirst, arr);
+    outputStream << time << ",";
+    std::cout << "1st Iverson's condition bubble sort\nTime: " << time << std::endl;
 
-    std::cout << "Binary insertion sort\nTime: " << Lulu::Sorts::Time::noteTheTime(binaryInsertionSort, arr) << std::endl;
+    time = Lulu::Sorts::Time::noteTheTime(bubbleSortByIversonFull, arr) ;
+    outputStream << time << ",";
+    std::cout << "1st and 2nd Iverson's condition bubble sort\nTime: " << time << std::endl;
 
-    std::cout << "Counting sort\nTime: " << Lulu::Sorts::Time::noteTheTime(countingSort, arr) << std::endl;
+    time = Lulu::Sorts::Time::noteTheTime(insertionSort, arr);
+    outputStream << time << ",";
+    std::cout << "Insertion sort\nTime: " << time << std::endl;
 
-    std::cout << "Radix sort\nTime: " << Lulu::Sorts::Time::noteTheTime(radixSort, arr) << std::endl;
+    time = Lulu::Sorts::Time::noteTheTime(binaryInsertionSort, arr);
+    outputStream << time << ",";
+    std::cout << "Binary insertion sort\nTime: " << time << std::endl;
 
-    std::cout << "Merge sort\nTime: " << Lulu::Sorts::Time::noteTheTime(mergeSort, arr) << std::endl;
+    time = Lulu::Sorts::Time::noteTheTime(countingSort, arr);
+    outputStream << time << ",";
+    std::cout << "Counting sort\nTime: " << time << std::endl;
 
-    std::cout << "Quick sort by Hoare\nTime: " << Lulu::Sorts::Time::noteTheTime(quickSortByHoare, arr) << std::endl;
+    time = Lulu::Sorts::Time::noteTheTime(radixSort, arr);
+    outputStream << time << ",";
+    std::cout << "Radix sort\nTime: " << time<< std::endl;
 
-    std::cout << "Quick sort by Lomuto\nTime: " << Lulu::Sorts::Time::noteTheTime(quickSortByLomuto, arr) << std::endl;
+    time = Lulu::Sorts::Time::noteTheTime(mergeSort, arr);
+    outputStream << time << ",";
+    std::cout << "Merge sort\nTime: " << time << std::endl;
 
-    std::cout << "Heap sort\nTime: " << Lulu::Sorts::Time::noteTheTime(heapSort, arr) << std::endl;
+    time = Lulu::Sorts::Time::noteTheTime(quickSortByHoare, arr);
+    outputStream << time << ",";
+    std::cout << "Quick sort by Hoare\nTime: " << time << std::endl;
+
+    time = Lulu::Sorts::Time::noteTheTime(quickSortByLomuto, arr);
+    outputStream << time << ",";
+    std::cout << "Quick sort by Lomuto\nTime: " << time << std::endl;
+
+    time = Lulu::Sorts::Time::noteTheTime(heapSort, arr);
+    outputStream << time << "\n";
+    std::cout << "Heap sort\nTime: " << time << std::endl;
 }
 
 
@@ -48,26 +81,32 @@ void Lulu::Sorts::Time::testSorts(std::vector<int>& arr) {
  * @brief first test use array with elements in segment [0, 5].
  *
  * */
-void Lulu::Sorts::Time::timeTest1() {
+void Lulu::Sorts::Time::timeTest1(std::ofstream& outputStream) {
     auto referenceArray = Lulu::Utils::getRandomVector(4100, 0, 5);
 
     std::vector<int> usedArray;
     std::cout << std::endl << "-----------------------------------Time Test 1 START-----------------------------------" << std::endl;
 
+    outputStream << "\n\n";
     std::cout << "\t1st group" <<std::endl;
+    outputStream << "numbers: [0, 5]\n";
     std::cout << "\t\tInfo:\n\t\t\tnumbers: [0, 5]" << std::endl;
+    createTableHat(outputStream);
     for (int i = 50; i <= 300; i += 10) {
         std::cout << "\n\t\t\tSize: " << i << std::endl;
         usedArray = std::vector<int>(referenceArray.begin(), referenceArray.begin() + i);
-        testSorts(usedArray);
+        testSorts(usedArray, outputStream);
     }
 
+    outputStream << "\n\n";
     std::cout << "\t2nd group" <<std::endl;
+    outputStream << "numbers: [0, 5]\n";
     std::cout << "\t\tInfo:\n\t\t\tnumbers: [0, 5]" << std::endl;
+    createTableHat(outputStream);
     for (int i = 100; i <= 4100; i += 100) {
         std::cout << "\n\t\t\tSize: " << i << std::endl;
         usedArray = std::vector<int>(referenceArray.begin(), referenceArray.begin() + i);
-        testSorts(usedArray);
+        testSorts(usedArray, outputStream);
     }
 
     std::cout << std::endl << "-----------------------------------Time Test 1 END-----------------------------------" << std::endl;
@@ -78,28 +117,42 @@ void Lulu::Sorts::Time::timeTest1() {
  * @brief first test use array with elements in segment [0, 4000].
  *
  * */
-void Lulu::Sorts::Time::timeTest2() {
+void Lulu::Sorts::Time::timeTest2(std::ofstream& outputStream) {
     auto referenceArray = Lulu::Utils::getRandomVector(4100, 0, 4000);
 
     std::vector<int> usedArray;
     std::cout << std::endl << "-----------------------------------Time Test 2 START-----------------------------------" << std::endl;
 
+    outputStream << "\n\n";
     std::cout << "\t1st group" <<std::endl;
+    outputStream << "numbers: [0, 4000]\n";
     std::cout << "\t\tInfo:\n\t\t\tnumbers: [0, 4000]" << std::endl;
+    createTableHat(outputStream);
     for (int i = 50; i <= 300; i += 10) {
         std::cout << "\n\t\t\tSize: " << i << std::endl;
         usedArray = std::vector<int>(referenceArray.begin(), referenceArray.begin() + i);
-        testSorts(usedArray);
+        testSorts(usedArray, outputStream);
     }
 
+    outputStream << "\n\n";
     std::cout << "\t2nd group" <<std::endl;
+    outputStream << "numbers: [0, 4000]\n";
     std::cout << "\t\tInfo:\n\t\t\tnumbers: [0, 4000]" << std::endl;
+    createTableHat(outputStream);
     for (int i = 100; i <= 4100; i += 100) {
         std::cout << "\n\t\t\tSize: " << i << std::endl;
         usedArray = std::vector<int>(referenceArray.begin(), referenceArray.begin() + i);
-        testSorts(usedArray);
+        testSorts(usedArray, outputStream);
     }
 
     std::cout << std::endl << "-----------------------------------Time Test 2 END-----------------------------------" << std::endl;
 }
 
+
+void Lulu::Sorts::Time::timeTest3(std::ofstream& outputStream) {
+
+}
+
+void Lulu::Sorts::Time::timeTest4(std::ofstream& outputStream) {
+
+}
