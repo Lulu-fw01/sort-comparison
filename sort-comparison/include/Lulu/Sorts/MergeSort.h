@@ -9,7 +9,7 @@
 
 namespace Lulu::Sorts {
 
-    void mergeSort(std::vector<int>&);
+    void mergeSort(std::vector<int> &array);
 }
 
 #endif //SORT_COMPARISON_MERGESORT_H
