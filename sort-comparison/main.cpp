@@ -31,6 +31,8 @@ int main(int argc, char* argv[]) {
 
     Lulu::Sorts::Time::timeTest1(outputFile);
     Lulu::Sorts::Time::timeTest2(outputFile);
+    Lulu::Sorts::Time::timeTest3(outputFile);
+    Lulu::Sorts::Time::timeTest4(outputFile);
 
     outputFile.close();
 

@@ -31,8 +31,8 @@ int Lulu::Utils::getMax(const std::vector<int> &arr) {
 /**
  * @brief Get n-th digit by 256.
  *
- * @param num - number.
- * @param digitNum - digit number.
+ * @param num number.
+ * @param digitNum digit number.
  * */
 int Lulu::Utils::getDigitBy256(int num, int digitNum) {
     return static_cast<int>(num / pow(256, digitNum)) % 256;
@@ -41,7 +41,7 @@ int Lulu::Utils::getDigitBy256(int num, int digitNum) {
 /**
  * @brief Check if int vector sorted.
  *
- * @param vec - const link to vector.
+ * @param arr const link to vector.
  * */
 bool Lulu::Utils::isSorted(const std::vector<int> &arr) {
     for (int i = 1; i < arr.size(); ++i) {
@@ -55,10 +55,10 @@ bool Lulu::Utils::isSorted(const std::vector<int> &arr) {
 /**
  * @brief Print int vector.
  *
- * @param vec - const link to vector.
+ * @param arr - const link to vector.
  * */
-void Lulu::Utils::printVector(const std::vector<int> &vec) {
-    for (auto elem: vec) {
+void Lulu::Utils::printVector(const std::vector<int> &arr) {
+    for (auto elem : arr) {
         std::cout << elem << " ";
     }
     std::cout << std::endl;
@@ -70,8 +70,8 @@ void Lulu::Utils::printVector(const std::vector<int> &vec) {
  * @attention this function use rand().
  * So, use srand() before.
  *
- * @param min -min value.
- * @param max -max value.
+ * @param min min value.
+ * @param max max value.
  * */
 int Lulu::Utils::getRandomNum(int min, int max) {
     return min + rand() % (max - min + 1);
@@ -79,6 +79,8 @@ int Lulu::Utils::getRandomNum(int min, int max) {
 
 /**
  * Get random int vector.
+ *
+ * @param length length of vector.
  * */
 std::vector<int> Lulu::Utils::getRandomVector(int length) {
     std::vector<int> vec(length);
@@ -94,9 +96,9 @@ std::vector<int> Lulu::Utils::getRandomVector(int length) {
  * @attention this function use rand().
  * So, use srand() before.
  *
- * @param length -length of vector.
- * @param min -min value of vector.
- * @param max -max value of vector.
+ * @param length length of vector.
+ * @param min min value of vector.
+ * @param max max value of vector.
  * */
 std::vector<int> Lulu::Utils::getRandomVector(int length, int min, int max) {
     std::vector<int> vec(length);
@@ -104,4 +106,19 @@ std::vector<int> Lulu::Utils::getRandomVector(int length, int min, int max) {
         vec[i] = getRandomNum(min, max);
     }
     return vec;
+}
+
+/**
+ * @brief Function which messes up elements in sorted int vector array.
+ * It swaps 2 elements in every 100 elements.
+ *
+ * @param arr link to int vector.
+ * */
+void Lulu::Utils::messUpTheArray(std::vector<int> &arr) {
+    int ind1, ind2;
+    for (int i = 100; i < arr.size(); i += 100) {
+        ind1 = Lulu::Utils::getRandomNum(i - 100, i);
+        ind2 = Lulu::Utils::getRandomNum(i - 100, i);
+        std::swap(arr[ind1], arr[ind2]);
+    }
 }

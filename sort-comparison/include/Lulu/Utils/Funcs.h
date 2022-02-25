@@ -15,13 +15,15 @@ namespace Lulu::Utils {
 
     bool isSorted(const std::vector<int> &arr);
 
-    void printVector(const std::vector<int> &vec);
+    void printVector(const std::vector<int> &arr);
 
     int getRandomNum(int min, int max);
 
     std::vector<int> getRandomVector(int length);
 
     std::vector<int> getRandomVector(int length, int min, int max);
+
+    void messUpTheArray(std::vector<int> &arr);
 }
 
 #endif //SORT_COMPARISON_GETDIGIT_H
