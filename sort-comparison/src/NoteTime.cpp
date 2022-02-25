@@ -9,10 +9,10 @@
 #include "Lulu/Utils/Funcs.h"
 
 /**
- * Function for counting sort function working time.
+ * Function for counting sort function average working time.
  *
  * @param sortFunction function which will sort array.
- * @param array int vector which should be sorted.
+ * @param array int vector on which the time will be measured.
  *
  * @return long long value of average time in nanoseconds.
  * */
