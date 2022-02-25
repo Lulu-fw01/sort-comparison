@@ -10,7 +10,7 @@ void mergeLists(std::vector<int>&, int, int, int, int);
  * @brief Merge sort function.
  *
  *
- * @param array -link to int vector.
+ * @param array link to int vector.
  * */
 void Lulu::Sorts::mergeSort(std::vector<int> &array) {
     int left = 0;
@@ -45,11 +45,11 @@ void Lulu::Sorts::mergeSort(std::vector<int> &array) {
  *
  * @brief Method for merging two sorted parts of array.
  *
- * @param array -link to int vector.
- * @param firstStart -start index of first part.
- * @param firstEnd -end index of first part
- * @param secondStart -start index of second part.
- * @param secondEnd -end index of second part.
+ * @param array link to int vector.
+ * @param firstStart start index of first part.
+ * @param firstEnd end index of first part
+ * @param secondStart start index of second part.
+ * @param secondEnd end index of second part.
  */
 void mergeLists(std::vector<int>& array, int firstStart, int firstEnd, int secondStart,
                 int secondEnd) {

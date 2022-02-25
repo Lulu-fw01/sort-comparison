@@ -9,7 +9,7 @@
  * @brief Counting sort function.<p>
  * Stable.
  *
- * @param array -link to int vector.
+ * @param array link to int vector.
  * */
 void Lulu::Sorts::countingSort(std::vector<int>& array) {
     int max = Lulu::Utils::getMax(array);

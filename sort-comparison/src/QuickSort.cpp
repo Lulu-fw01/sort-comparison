@@ -40,7 +40,7 @@ std::pair<int, int> pivotListByHoare(std::vector<int> &array, int first, int las
  * @brief Quick sort function <p>
  * that uses the Hoare partition by the middle element.
  *
- * @param array -link to int vector.
+ * @param array link to int vector.
  * */
 void Lulu::Sorts::quickSortByHoare(std::vector<int> &array) {
     // Call for quick sort.
@@ -51,9 +51,9 @@ void Lulu::Sorts::quickSortByHoare(std::vector<int> &array) {
  * @brief Quick sort function on a segment <p>
  * that uses the Hoare partition by the middle element.
  *
- * @param array -link to int vector.
- * @param first -index of first element of a segment.
- * @param last -index of last element of a segment.
+ * @param array link to int vector.
+ * @param first index of first element of a segment.
+ * @param last index of last element of a segment.
  * */
 void Lulu::Sorts::quickSortByHoare(std::vector<int> &array, int first, int last) {
     if (first < last) {
@@ -91,7 +91,7 @@ int pivotListByLomuto(std::vector<int> &array, int first, int last) {
  * @brief Quick sort function <p>
  * that uses the Lomuto partition by the last element.
  *
- * @param array -link to int vector.
+ * @param array link to int vector.
  * */
 void Lulu::Sorts::quickSortByLomuto(std::vector<int> &array) {
     // Call for quick sort.

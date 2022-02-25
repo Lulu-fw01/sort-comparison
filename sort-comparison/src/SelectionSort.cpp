@@ -10,7 +10,7 @@
  * This function realise selection sort algorithm
  * by select minimum.
  *
- * @param array -link to int vector.
+ * @param array link to int vector.
  * */
 void Lulu::Sorts::selectionSort(std::vector<int>& array) {
     int min;

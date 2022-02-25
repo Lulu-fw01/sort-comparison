@@ -9,8 +9,9 @@
  * @brief Radix sort function. <p>
  * Last significant radix sort by base 256.
  *
- * @param array -link to int vector.
- * @attention numbers in vector greater than or equal to zero<p>
+ * @param array link to int vector.
+ *
+ * @attention numbers in vector must be greater than or equal to zero<p>
  * in this function realization.
  * */
 void Lulu::Sorts::radixSort(std::vector<int>& array) {

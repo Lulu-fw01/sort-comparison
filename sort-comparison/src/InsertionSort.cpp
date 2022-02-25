@@ -10,7 +10,7 @@
  * @brief Insertion sort function.<p>
  * Simple inserts.
  *
- * @param array -link to int vector.
+ * @param array link to int vector.
  * */
 void Lulu::Sorts::insertionSort(std::vector<int>& array) {
     int key;
@@ -33,7 +33,7 @@ void Lulu::Sorts::insertionSort(std::vector<int>& array) {
  * @brief Insertion sort function.<p>
  * Binary inserts.
  *
- * @param array -link to int vector.
+ * @param array link to int vector.
  * */
 void Lulu::Sorts::binaryInsertionSort(std::vector<int>& array) {
     int j;

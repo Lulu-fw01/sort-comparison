@@ -7,7 +7,7 @@
 /**
  * @brief Heap sort function.
  *
- * @param array -link to int vector.
+ * @param array link to int vector.
  * */
 void Lulu::Sorts::heapSort(std::vector<int> &array) {
     Lulu::Sorts::BinaryHeap heap(array);
@@ -17,7 +17,7 @@ void Lulu::Sorts::heapSort(std::vector<int> &array) {
 /**
  *  Get parent index of element.
  *
- *  @param son -index of son element.
+ *  @param son index of son element.
  *
  *  @return parent index.
  * */
@@ -94,7 +94,7 @@ Lulu::Sorts::BinaryHeap::BinaryHeap(std::vector<int> &array) : m_original(array)
 /**
  * @brief Add element into heap.
  *
- * @param elem -value of element.
+ * @param elem value of element.
  * */
 void Lulu::Sorts::BinaryHeap::add(int elem) {
     m_heap.push_back(elem);
