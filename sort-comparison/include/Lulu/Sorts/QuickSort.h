@@ -8,13 +8,13 @@
 #include <vector>
 
 namespace Lulu::Sorts {
-    void quickSortByHoare(std::vector<int>&);
+    void quickSortByHoare(std::vector<int> &array);
 
-    void quickSortByHoare(std::vector<int>&, int, int);
+    void quickSortByHoare(std::vector<int> &array, int first, int last);
 
-    void quickSortByLomuto(std::vector<int>&);
+    void quickSortByLomuto(std::vector<int> &array);
 
-    void quickSortByLomuto(std::vector<int>&, int, int);
+    void quickSortByLomuto(std::vector<int> &array, int first, int last);
 }
 
 #endif //SORT_COMPARISON_QUICKSORT_H
