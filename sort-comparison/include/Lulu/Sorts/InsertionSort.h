@@ -9,9 +9,9 @@
 
 namespace Lulu::Sorts {
 
-    void insertionSort(std::vector<int>&);
+    void insertionSort(std::vector<int>& array);
 
-    void binaryInsertionSort(std::vector<int>&);
+    void binaryInsertionSort(std::vector<int>& array);
 
 }
 
