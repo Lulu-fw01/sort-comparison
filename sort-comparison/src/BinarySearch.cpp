@@ -4,6 +4,14 @@
 
 #include "Lulu/Search/BinarySearch.h"
 
+/**
+ * @brief Right binary search.
+ *
+ * @param numbers int vector where we search.
+ * @param elem int elem which we search.
+ * @param left left border.
+ * @param right right border.
+ * */
 int Lulu::Search::rightSearch(const std::vector<int> &numbers, int elem, int left, int right) {
     int mid;
 
