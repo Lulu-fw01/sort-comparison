@@ -9,7 +9,7 @@
 
 namespace Lulu::Sorts {
 
-    void heapSort(std::vector<int>&);
+    void heapSort(std::vector<int> &array);
 
     class BinaryHeap {
     private:
