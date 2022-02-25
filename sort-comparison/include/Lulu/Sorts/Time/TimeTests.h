@@ -10,15 +10,15 @@
 
 namespace Lulu::Sorts::Time {
 
-    void testSorts(std::vector<int>&, std::ofstream&);
+    void testSorts(const std::vector<int>& arr, std::ofstream& outputStream);
 
-    void timeTest1(std::ofstream&);
+    void timeTest1(std::ofstream& outputStream);
 
-    void timeTest2(std::ofstream&);
+    void timeTest2(std::ofstream& outputStream);
 
-    void timeTest3(std::ofstream&);
+    void timeTest3(std::ofstream& outputStream);
 
-    void timeTest4(std::ofstream&);
+    void timeTest4(std::ofstream& outputStream);
 
 }
 

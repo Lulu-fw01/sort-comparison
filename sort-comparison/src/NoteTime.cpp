@@ -14,6 +14,8 @@
  * @param sortFunction function which will sort array.
  * @param array int vector on which the time will be measured.
  *
+ * @attention If function hasn't sorted the array message "NOT SORTED!!!" will be printed in console.
+ *
  * @return long long value of average time in nanoseconds.
  * */
 long long Lulu::Sorts::Time::noteTheTime(void(*sortFunction) (std::vector<int> &), const std::vector<int>& array) {
@@ -22,6 +24,7 @@ long long Lulu::Sorts::Time::noteTheTime(void(*sortFunction) (std::vector<int> &
     for (int i = 0; i < 13; ++i) {
         workArray = array;
         if (i < 3) {
+            // Skip the first three values.
             sortFunction(workArray);
             continue;
         }
